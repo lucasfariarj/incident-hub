@@ -37,7 +37,7 @@
 - MySQL: Banco de dados relacional para o registro geral da aplicação: usuários, histórico de alterações e demais informações da aplicação.
 - Prisma: ORM utilizado para facilitar a comunicação entre a aplicação e o PostgreSQL, através de tipagem, migrations e uma API para consultas ao banco.
 - Zod: Biblioteca de validação de dados utilizada para garantir que informações recebidas pela aplicação
-- Vitest: ramework de testes utilizado para testes unitários e de regras de negócio, garantindo que partes isoladas da aplicação funcionem conforme esperado.
+- Vitest: Framework de testes utilizado para testes unitários e de regras de negócio, garantindo que partes isoladas da aplicação funcionem conforme esperado.
 - Playwright: Framework para testes end-to-end (E2E), permitindo simular o comportamento de um usuário real no navegador e validar os principais fluxos da aplicação
 
 # Estrutura geral
