@@ -134,6 +134,30 @@ Execução do script (`npm run db:seed`) e conferência via consulta direta ao S
 ### Decisão
 Manter o mapeamento "In Progress" → `INVESTIGATING`, por ser o status do enum mais próximo semanticamente ("incidente em análise/tratamento"). Ajuste flexível caso surja um nome de status mais específico no futuro.
 
+---
+
+## 6. Documentação técnica do projeto
+
+**Ferramenta:** Gemini
+
+### Objetivo
+Ter uma documentação técnica além do `README.md` (focado em setup), cobrindo comandos disponíveis, responsabilidades de cada módulo/pasta e as funcionalidades já implementadas — incluindo uma explicação de como as páginas são renderizadas (Server vs. Client Components).
+
+### Contexto
+Projeto já com `README.md` (instalação, execução, testes, arquitetura resumida e limitações conhecidas) e código-fonte completo (`app/`, `components/`, `services/`, `lib/`, `prisma/`). Dúvida pontual do usuário sobre o modelo de renderização das páginas do App Router.
+
+### Instrução
+Explicar como as páginas são renderizadas e gerar uma documentação do projeto contendo comandos, responsabilidades de cada parte do código e funcionalidades.
+
+### Resultado
+Leitura do código (`package.json`, páginas em `app/`, `components/`, `services/incident.service.ts`, `lib/validations/incident.ts`, `prisma/schema.prisma`) para criar `DOCUMENTATION.md`, com: tabela de stack, tabela de comandos (scripts do `package.json` + comandos auxiliares como `prisma generate`), estrutura de pastas com a responsabilidade de cada arquivo, modelo de dados e regras de transição de status, uma seção específica sobre o modelo de renderização (Server Components com `force-dynamic` para leitura de dados direto do Prisma; Client Components usando `fetch` contra a API REST e `router.refresh()` para atualizar a tela) e a lista de funcionalidades implementadas.
+
+### Validação
+Conferência cruzada entre o conteúdo gerado e o código-fonte de cada página/serviço citado (ex.: presença de `export const dynamic = "force-dynamic"` nas três páginas de leitura, fluxo de `patch`/`router.refresh()` em `incident-details.tsx`).
+
+### Decisão
+Manter `DOCUMENTATION.md` como arquivo separado do `README.md`, já que este último é voltado a onboarding/setup rápido e o novo documento é uma referência técnica mais detalhada.
+
 # Pontos a se Ressaltar
 - a IA produziu algo incorreto?
 Inicialmente, deixou de gerar algumas solicitações. Tiveram que ser incrementadas posteriormente
