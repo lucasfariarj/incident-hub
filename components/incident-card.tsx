@@ -1,0 +1,4 @@
+import Link from "next/link";
+import { IncidentBadge } from "./incident-badge";
+type Props = { incident: { id: string; title: string; description: string; severity: string; status: string; assignee: string; createdAt: Date; _count: { updates: number } } };
+export function IncidentCard({ incident }: Props) { return <Link href={`/incidents/${incident.id}`} className="incident-card"><div className="card-top"><div><h2>{incident.title}</h2><p className="muted">Responsável: {incident.assignee}</p></div><IncidentBadge value={incident.severity} /></div><p className="description">{incident.description}</p><div className="card-bottom"><IncidentBadge value={incident.status} /><span>◷ {new Intl.DateTimeFormat("pt-BR", { dateStyle: "medium", timeStyle: "short" }).format(incident.createdAt)}</span><span>◉ {incident._count.updates} atualizações</span></div></Link>; }

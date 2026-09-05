@@ -1,0 +1,2 @@
+import { IncidentForm } from "@/components/incident-form";
+export default function NewIncidentPage() { return <main className="shell narrow"><a href="/incidents" className="back">← Voltar para incidentes</a><section className="page-title"><p>NOVO REGISTRO</p><h1>Registrar incidente</h1><span>Conte o que está acontecendo para a equipe acompanhar e resolver.</span></section><IncidentForm /></main>; }
