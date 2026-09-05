@@ -34,7 +34,7 @@
 - Next.js: Framework baseado em React full-stack para criação de páginas, rotas, API e integração entre frontend e backend.
 - React: Biblioteca utilizada para construir a interface da aplicação por meio de componentes reutilizáveis e interativos.
 - TypeScript: Tipagem dos dados
-- PostgreSQL: Banco de dados relacional para o registro geral da aplicação: usuários, histórico de alterações e demais informações da aplicação.
+- MySQL: Banco de dados relacional para o registro geral da aplicação: usuários, histórico de alterações e demais informações da aplicação.
 - Prisma: ORM utilizado para facilitar a comunicação entre a aplicação e o PostgreSQL, através de tipagem, migrations e uma API para consultas ao banco.
 - Zod: Biblioteca de validação de dados utilizada para garantir que informações recebidas pela aplicação
 - Vitest: ramework de testes utilizado para testes unitários e de regras de negócio, garantindo que partes isoladas da aplicação funcionem conforme esperado.
